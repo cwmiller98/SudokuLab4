@@ -409,6 +409,11 @@ public class Sudoku extends LatinSquare {
 			ar[index] = ar[i];
 			ar[i] = a;
 		}
+		// ALSO LAB 4 YASMINE//
 	}
-	publcwauhdwadwiuahwadiho
+	private class Cell {
+
+		// PUT LAB 4 HERE//
+		}
 }
+
