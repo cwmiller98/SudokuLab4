@@ -410,4 +410,5 @@ public class Sudoku extends LatinSquare {
 			ar[i] = a;
 		}
 	}
+	publcwauhdwadwiuahwadiho
 }
