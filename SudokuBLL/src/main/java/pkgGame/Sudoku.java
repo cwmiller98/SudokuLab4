@@ -416,6 +416,12 @@ public class Sudoku extends LatinSquare {
 		private int iCol;
 		private int[] lstValidValue;
 		
+		public int getiRow() {
+			return iRow;	
+		}
+		public boolean equals(Object x) {
+		}
+		
 
 		}
 }
