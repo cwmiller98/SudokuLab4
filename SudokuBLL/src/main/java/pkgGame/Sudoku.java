@@ -441,6 +441,9 @@ public class Sudoku extends LatinSquare {
 		public void ShuffleValidValues() {
 			Collections.shuffle(lstValidValue);
 		}
+		public ArrayList<Integer> getLstValidValues(){
+			return lstValidValue;
 	}
+}
 }
 
