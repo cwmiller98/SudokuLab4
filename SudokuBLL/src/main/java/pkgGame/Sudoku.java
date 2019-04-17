@@ -412,8 +412,11 @@ public class Sudoku extends LatinSquare {
 		// ALSO LAB 4 YASMINE//
 	}
 	private class Cell {
+		private int iRow;
+		private int iCol;
+		private int[] lstValidValue;
+		
 
-		// PUT LAB 4 HERE//
 		}
 }
 
