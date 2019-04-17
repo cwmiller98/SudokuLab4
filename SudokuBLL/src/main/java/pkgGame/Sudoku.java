@@ -1,6 +1,8 @@
 package pkgGame;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 import pkgHelper.LatinSquare;
@@ -414,7 +416,7 @@ public class Sudoku extends LatinSquare {
 	private class Cell {
 		private int iRow;
 		private int iCol;
-		private int[] lstValidValue;
+		private ArrayList<Integer> lstValidValue = new ArrayList<Integer>();
 		
 		public Cell(int Row, int Col) {
 			this.iRow = Row;
@@ -435,6 +437,9 @@ public class Sudoku extends LatinSquare {
 			}
 		}
 			return false;
+		}
+		public void ShuffleValidValues() {
+			Collections.shuffle(lstValidValue);
 		}
 	}
 }
