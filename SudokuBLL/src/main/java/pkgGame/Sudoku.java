@@ -416,6 +416,11 @@ public class Sudoku extends LatinSquare {
 		private int iCol;
 		private int[] lstValidValue;
 		
+		public Cell(int Row, int Col) {
+			this.iRow = Row;
+			this.iCol = Col;
+		}
+		
 		public int getiRow() {
 			return iRow;	
 		}
@@ -429,6 +434,8 @@ public class Sudoku extends LatinSquare {
 					return true;
 			}
 		}
+			return false;
 		}
+	}
 }
 
