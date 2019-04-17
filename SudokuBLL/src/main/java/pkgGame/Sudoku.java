@@ -420,6 +420,10 @@ public class Sudoku extends LatinSquare {
 			return iRow;	
 		}
 		public boolean equals(Object x) {
+			if (x instanceOf Cell) {
+				(Cell) x;
+			}
+			
 		}
 		
 
