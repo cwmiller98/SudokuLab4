@@ -1,6 +1,9 @@
 package pkgGame;
 
 import java.security.SecureRandom;
+
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
@@ -51,6 +54,7 @@ public class Sudoku extends LatinSquare {
 	 * @throws Exception
 	 *             if the iSize given doesn't have a whole number square root
 	 */
+	
 	public Sudoku(int iSize) throws Exception {
 
 		this.iSize = iSize;
@@ -414,6 +418,9 @@ public class Sudoku extends LatinSquare {
 		}
 		// ALSO LAB 4 YASMINE//
 	}
+	
+	private HashMap<Integer, Cell> cells = new HashMap<Integer, Cell>();
+	
 	private class Cell {
 		private int iRow;
 		private int iCol;
