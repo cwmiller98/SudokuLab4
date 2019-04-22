@@ -449,12 +449,23 @@ public class Sudoku extends LatinSquare {
 		}
 			return false;
 		}
+		
 		public void ShuffleValidValues() {
 			Collections.shuffle(lstValidValue);
 		}
+		
 		public ArrayList<Integer> getLstValidValues(){
 			return lstValidValue;
 	}
+		
+		public void setlstValidValues(HashSet<Integer> hsValidValues) {
+			lstValidValue = new ArrayList<Integer>(hsValidValues);
+		}
+		
+		public int hashCode() {
+			return Objects.hash(iRow, iCol);
+		}
+		
 		public Cell GetNextCell(Cell c) {
 			int Col = c.getiCol() + 1;
 			int Row = c.getiRow();
