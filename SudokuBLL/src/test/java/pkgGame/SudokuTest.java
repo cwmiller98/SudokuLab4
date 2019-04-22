@@ -123,7 +123,23 @@ public class SudokuTest {
 
 	}
 	
-	}
+	@Test
+	public void Sudoku_Test()
+	{
+		Sudoku sudo;
+		try {
+			sudo = new Sudoku(9);
+			System.out.println("\n");
+			
+			sudo.PrintPuzzle();
+			System.out.println("Full Puzzle");
+
+		} 
+		catch (Exception exc) 
+		{
+			exc.printStackTrace();
+		}
+}}
 
 
 
