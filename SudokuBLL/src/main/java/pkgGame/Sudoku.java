@@ -419,6 +419,67 @@ public class Sudoku extends LatinSquare {
 		// ALSO LAB 4 YASMINE//
 	}
 	
+	public boolean isValidValue(Sudoku.Cell cel, int iValue) 
+	{
+		boolean i = false;
+		if(isValidValue(cel.getiRow(),cel.getiCol(),iValue)) {
+			i = true;
+		}
+		return i;
+	}
+	
+	private HashSet<Integer> getAllValidCellValues(int Col, int Row) {
+		
+		HashSet<Integer> h = new HashSet<Integer>();
+		
+		for (int i = 1; i <= iSize; i++) {
+			if (isValidValue(Row, Col, i)) {
+				h.add(i);
+			}
+		}
+		
+		return h;
+	}
+	
+	private void SetCells() {
+		for (int i = 0; i < iSize; i++) {
+			for 
+				(int k = 0; k < iSize; k++) 
+			{
+				Cell cel = new Cell(i, k);
+				cel.setlstValidValues(getAllValidCellValues(k, i));
+				cel.ShuffleValidValues();
+				cells.put(cel.hashCode(), cel);
+			}
+		}
+		
+	}
+	
+	private boolean fillRemaining(Cell cel) {
+		if (cel == null) {
+			return true;
+		}
+		if (cel.getLstValidValues().isEmpty()) 
+		{
+			cel = cel.GetNextCell(cel);
+		}
+		for (int val : cel.getLstValidValues()) 
+		{
+			if (isValidValue(cel, val)) 
+			{
+				getPuzzle()[cel.getiRow()][cel.getiCol()] = val;
+				
+				if (fillRemaining(cel.GetNextCell(cel))) 
+				{
+					return true;
+				}
+				
+				getPuzzle()[cel.getiRow()][cel.getiCol()] = 0;
+			}
+		}
+		return false;
+	}
+	
 	private HashMap<Integer, Cell> cells = new HashMap<Integer, Cell>();
 	
 	private class Cell {
@@ -496,6 +557,8 @@ public class Sudoku extends LatinSquare {
 			return (Cell) cells.get(Objects.hash(Row, Col));
 				}
 			}
+	
+	
 }
 
 
